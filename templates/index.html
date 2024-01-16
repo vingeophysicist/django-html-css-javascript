@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page describing python language</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <h1 class = "topic">How I started learning Python programming language</h1>
+    <p>I gained interest in learning Python because I had an interest in web development. </p> 
+    <p>   The journey started years ago when I bought a course on Udemy.</p>  
+    <p> It was a Python course, but it was focused on using Python and Django to develop dynamic web applications. </p> 
+    <p> I took the course along with HTML, CSS, and Javascript, and later on, I learned React to boost my frontend skills. </p> 
+    <p>   The journey so far has been a wonderful one for me. </p>
+        <p>Python knowledge has given me the knowledge and power to create wonderful web applications that solve human problems</p> 
+
+    <h2 class="topic1">Features of python programming language</h2>
+    <ol>
+        <li>Python is a general purpose language.Apart from web development. it can be used for game development, web scraping and data analysis</li>
+        <li>The Python programming syntax is easy to learn</li>
+         <li>Python is a weakly typed programming language</li>
+         <li>Python is a high level programming language.</li>
+        
+    </ol>
+
+    <h3 class="topic2">Pros and cons of Python language</h3>
+    <div class="container">
+      <div class="grid-item">Pros</div>
+      <div class="grid-item">Example code</div>
+      <div class="grid-item">Source</div>
+      <div class="grid-item">Extra comments</div>
+      
+      <div class="grid-row-wrapper">
+
+              <div class="grid-item">It is easy to learn</div>
+              <div class="grid-item">It is a human readable language</div>
+             
+      </div>
+
+      <div class="grid-row-wrapper">
+        <div class="grid-item"><code>name = vincent
+          print(name)
+        </code></div>
+
+        <div class="grid-item"><code>
+           animal = ["goat", "Lion", "Tiger"]
+           print(animal)
+
+        </code>
+      </div>
+
+    </div>
+
+    <div class="grid-row-wrapper">
+      <div class="grid-item"><a href="https://github.com/vingeophysicist">github</a></div>
+
+
+      <div class="grid-item"><a href="https://github.com/vingeophysicist">github</a></div>
+
+    </div>
+
+    <div class="grid-row-wrapper">
+      <div class="grid-item">The code is depicts a variable declaration and using the print function to print out the stored value in the variable</div>
+
+
+      <div class="grid-item"><p> You can see the python code is easy to ready and understand</p></div>
+
+    </div>
+          <div class="grid-item">Cons</div>
+        <div class="grid-item">Example code</div>
+        <div class="grid-item">Source</div>
+        <div class="grid-item">Extra comments</div>
+      
+            <div class="grid-row-wrapper">
+
+              <div class="grid-item"><p>Python can be a bit slow because its a high level language. So, it usage can be limited</p></div>
+              <div class="grid-item">Runtime error</div>
+            
+          </div>
+
+          <div class="grid-row-wrapper">
+
+              <div class="grid-item"><code>list=["toy"] 
+
+                list.append("football")
+              </code></div>
+              
+              <div class="grid-item"><code>print(100/0)</code></div>
+            
+          </div>
+
+          <div class="grid-row-wrapper">
+
+            <div class="grid-item"><a href="https://github.com/vingeophysicist">github</a></div>
+
+
+            <div class="grid-item"><a href="https://github.com/vingeophysicist">github</a></div>
+          
+        </div>
+
+        <div class="grid-row-wrapper">
+
+          <div class="grid-item"><p>Python is a high level langauge. Therefore, it tend to be slow sometimes.</p></div>
+          <div class="grid-item"><img src="{% static 'images/error.png' %}"></div>
+        
+      </div>
+
+  </div>
+  
+    </div>
+   
+
+      <h2>A pictorial code that explains how python code is used to scrape a page.</h2>
+
+      <img src="{% static 'images/python.png' %}" alt="Web scraping code" title="A python code use for webscraping" />
+
+      <h2> code samples of Python</h2>
+      <code>
+        class Category(models.Model):
+    name = models.CharField(max_length=500)
+    slug = models.SlugField(max_length=250, default='default-slug', unique=True)
+    </code> 
+
+
+    <h3 class="topic3">Why the language match my needs</h3>
+    <p> The language matches my needs because of its multipurpose nature.</p>
+    <p> I can decide to use it for data analysis or machine without requiring to learn a new language. </p>
+    <p>It's a very good backend language for web development.</p>
+    
+    <h2 class="topic4"> wants to learn more on Python</h2>
+   <li> <a class="link1" href="https://www.anythingpython.com">anythingpython.com</a></li>
+   <li> <a href="https://www.udemy.com">udemy.com</a></li>
+   <li><a href="https://www.freecodecamp.com">freecodecamp.com</a></li>
+
+
+  
+<h1 class="topic5">Feedback form</h1>
+  <div class="divbox">
+    <form name="feedbackform" id="myForm">
+      <label for="fname">Name</label>
+      <input type="text" id="name" name="firstname" placeholder="Your name.." value="James">
+  
+      <label for="lname">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" value="trig@gmail.com" >
+
+      <label for="selection">Selection</label>
+      <select name="selection" value="" id="userType" onchange="loadJsonData()">
+        <option value="student">Student</option>
+        <option value="bachelor">Bachelor</option>
+
+        
+      </select>
+
+      <div id="jsonDataDisplay"></div>
+
+
+
+      <label for="message">Comment</label>
+      <textarea type="text" id="message" name="message" placeholder="Your comment.." value="comment"> </textarea>
+    
+      <button type="submit">Submit</button>
+
+
+
+
+      <ul id="displayList" style="list-style-type: none;">
+       
+      </ul>
+
+    </form>
+    
+    
+    
+  </div>
+
+
+  <script>
+
+  
+
+const form = document.getElementById('myForm');
+const displayList = document.getElementById('displayList');
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const input1Value = document.getElementById('name').value;
+  const input2Value = document.getElementById('email').value;
+  const input3Value = document.getElementById('userType').value;  
+  const input4Value = document.getElementById('message').value;
+
+  const radioInputs = document.querySelectorAll('input[type="radio"]:checked');
+  const radioInputValues = Array.from(radioInputs).map(input => `${input.name}: ${input.value}`).join(', ');
+
+
+  const textareaInput = document.querySelector('textarea[name="text"]'); 
+  const textareaValue = textareaInput ? `<span style="font-weight:bold;">Response</span>: ${textareaInput.value}` : '';
+
+
+
+
+
+
+  const listItem = document.createElement('li');
+  listItem.innerHTML = 
+  `<span style="font-weight:bold;">Name:</span> ${input1Value} <br>
+  <span style="font-weight:bold;"> Email: </span>${input2Value} <br>
+  <span style="font-weight:bold;"> Options:</span> ${input3Value} 
+  <span style="font-weight:bold;">Ratings:</span> ${radioInputValues} ${textareaValue}<br>
+  <span style="font-weight:bold;">Comment:</span> ${input4Value}
+  `;
+  
+  
+
+  displayList.appendChild(listItem);
+
+
+});
+
+
+function loadJsonData() {
+  const userType = document.getElementById('userType').value;
+
+  const studentJsonLink = 'https://my-json-server.typicode.com/depth0/survey1/surveys';
+  const bachelorJsonLink = 'https://my-json-server.typicode.com/depth0/survey1/questions';
+
+  const jsonLink = (userType === 'student') ? studentJsonLink : bachelorJsonLink;
+
+  fetch(jsonLink)
+    .then(response => response.json())
+    .then(jsonData => {
+
+      const jsonDataDisplay = document.getElementById('jsonDataDisplay');
+
+      jsonDataDisplay.innerHTML = '';
+
+      jsonData.forEach(item => {
+
+        const itemDiv = document.createElement('div');
+        const radioInputs = (item.options && item.options.length > 0)
+          ? item.options.map((option, index) => `
+              <input type="radio" id="option${index + 1}" name="options" value="${option}" />
+              <label for="option${index + 1}">${option}</label>
+            `).join('') 
+          : (item.qs && item.qs.length > 0)
+            ? item.qs.map((q, index) => `
+                <input type="radio" id="question${index + 1}" name="questions" value="${q}" />
+                <label for="question${index + 1}">${q}</label>
+              `).join('')
+            : `<textarea name="text"></textarea>`;
+
+         
+        itemDiv.innerHTML = `
+        <form>
+          <p>${item.title}</p>
+          <p>${item.desc || item.description}</p>
+          <div>
+             ${radioInputs}
+
+          </div>
+
+          <hr>
+        </form>
+        `;
+        jsonDataDisplay.appendChild(itemDiv);
+      });
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
+}
+
+
+
+
+
+loadJsonData();
+
+</script>
+
+
+</body>
+</html>
