@@ -225,11 +225,7 @@ form.addEventListener('submit', (event) => {
 
 function loadJsonData() {
   const userType = document.getElementById('userType').value;
-
-  const studentJsonLink = 'https://my-json-server.typicode.com/depth0/survey1/surveys';
-  const bachelorJsonLink = 'https://my-json-server.typicode.com/depth0/survey1/questions';
-
-  const jsonLink = (userType === 'student') ? studentJsonLink : bachelorJsonLink;
+  const jsonLink = `/api/${userType}/`;
 
   fetch(jsonLink)
     .then(response => response.json())
