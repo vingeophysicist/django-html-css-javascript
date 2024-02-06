@@ -1,28 +1,20 @@
 from django.shortcuts import render
-from django.http import JsonResponse
-import requests
+from rest_framework import viewsets
+from .models import Survey, Question
+from .serializers import SurveySerializer, QuestionSerializer
 
 
 
 # Create your views here.
-def retrieve_json_data(request, user_type):
-    
-    student = 'https://my-json-server.typicode.com/depth0/survey1/surveys'
-    bachelor = 'https://my-json-server.typicode.com/depth0/survey1/questions'
-    
-    json_link = student if user_type == 'student' else bachelor
-    
-    try:
-        response = requests.get(json_link)
-        data = response.json()
-        return JsonResponse(data, safe=False)
-    except requests.exceptions.RequestException as e:
-        return JsonResponse({'error': str(e)})
-    
-    
-    
+
 
 def index(request):
     return render(request, 'index.html')
 
+class SurveyViewSet(viewsets.ModelViewSet):
+    queryset = Survey.objects.all()
+    serializer_class = SurveySerializer
 
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer

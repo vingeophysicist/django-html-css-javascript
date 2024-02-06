@@ -225,7 +225,10 @@ form.addEventListener('submit', (event) => {
 
 function loadJsonData() {
   const userType = document.getElementById('userType').value;
-  const jsonLink = `/api/${userType}/`;
+  const studentJsonLink = 'http://127.0.0.1:8000/api/surveys/';
+  const bachelorJsonLink = 'http://127.0.0.1:8000/api/questions/';
+
+  const jsonLink = (userType === 'student') ? studentJsonLink : bachelorJsonLink;
 
   fetch(jsonLink)
     .then(response => response.json())

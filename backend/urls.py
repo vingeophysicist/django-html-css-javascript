@@ -1,13 +1,19 @@
-from django.contrib import admin
-from django.urls import path, include, re_path
 from . import views
-from .views import retrieve_json_data
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import SurveyViewSet, QuestionViewSet
 
 
 app_name = 'backend'
 
 
+
+
+router = DefaultRouter()
+router.register(r'surveys', SurveyViewSet, basename='survey')
+router.register(r'questions', QuestionViewSet, basename='question')
+
 urlpatterns = [
     path('', views.index, name ='indexpage'),
-    path('api/<str:user_type>/', retrieve_json_data, name='retrieve_json_data')
+    path('api/', include(router.urls)),
 ]
