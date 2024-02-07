@@ -109,4 +109,5 @@ How to run the djangpo application.
 
 To run the web application, navigate to the project(base) directory and type: python manage.py runserver
 Then use the local url to access the web application. 
-The API links are as follows: http://127.0.0.1:8000/api/surveys/  and http://127.0.0.1:8000/api/questions/
+The API links are as follows: http://127.0.0.1:8000/api/surveys/  and  http://127.0.0.1:8000/api/surveys/id/
+ http://127.0.0.1:8000/api/questions/ and  http://127.0.0.1:8000/api/questions/id/
