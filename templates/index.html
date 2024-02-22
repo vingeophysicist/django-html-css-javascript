@@ -1,15 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page describing python language</title>
-    {% load static %}
+    
 
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
 <body>
+   <div> <a style="font-size: 50px" href="{% url 'backend:logout' %}">logout</a>
+   </div>
     <h1 class = "topic">How I started learning Python programming language</h1>
     <p>I gained interest in learning Python because I had an interest in web development. </p> 
     <p>   The journey started years ago when I bought a course on Udemy.</p>  
@@ -225,21 +229,24 @@ form.addEventListener('submit', (event) => {
 
 function loadJsonData() {
   const userType = document.getElementById('userType').value;
-  const studentJsonLink = 'http://127.0.0.1:8000/api/surveys/';
-  const bachelorJsonLink = 'http://127.0.0.1:8000/api/questions/';
+  const Link = 'http://127.0.0.1:8000/api/questions/';
 
-  const jsonLink = (userType === 'student') ? studentJsonLink : bachelorJsonLink;
-
-  fetch(jsonLink)
+  fetch(Link)
     .then(response => response.json())
     .then(jsonData => {
-
       const jsonDataDisplay = document.getElementById('jsonDataDisplay');
-
       jsonDataDisplay.innerHTML = '';
 
-      jsonData.forEach(item => {
+      let filteredJsonData;
+      if (userType === 'student') {
+        // If userType is 'student', show the last two items
+        filteredJsonData = jsonData.slice(-2);
+      } else {
+        // Otherwise, show all items
+        filteredJsonData = jsonData;
+      }
 
+      filteredJsonData.forEach(item => {
         const itemDiv = document.createElement('div');
         const radioInputs = (item.options && item.options.length > 0)
           ? item.options.map((option, index) => `
@@ -253,28 +260,21 @@ function loadJsonData() {
               `).join('')
             : `<textarea name="text"></textarea>`;
 
-         
         itemDiv.innerHTML = `
         <form>
           <p>${item.title}</p>
           <p>${item.desc || item.description}</p>
           <div>
              ${radioInputs}
-
           </div>
-
           <hr>
-        </form>
-        `;
+        </form>`;
+        
         jsonDataDisplay.appendChild(itemDiv);
       });
     })
     .catch(error => console.error('Error fetching JSON:', error));
 }
-
-
-
-
 
 loadJsonData();
 
